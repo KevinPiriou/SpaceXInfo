@@ -1,38 +1,235 @@
+@import url(//db.onlinewebfonts.com/c/cd0161509171ec0b9558c548d8e9c26d?family=Bank+Gothic);
+body {
+  background-color: #292a2e;
+  font-family: "Bank Gothic";
+  font-size: 18px;
+  color: #fff5ee;
+}
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  color: #fff5ee;
+}
+.video_contain {
+  display: block;
+  position: absolute;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(calc((100% - 100vw) / 2));
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-aspect-ratio: 1920/1080) {
+  .video-container > video {
+    height: 100%;
   }
 }
+@media screen and (min-aspect-ratio: 1920/1080) {
+  .video-container > video {
+    width: 100%;
+  }
+}
+#home {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: relative;
+}
+.history {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 35px;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.last-launch {
+  font-weight: bold;
+  font-size: 36px;
+  color: plum;
+}
+
+.last-launch-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-items: center;
+  border: solid;
+  border-color: aliceblue;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  max-height: 1045px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+#histo-card {
+  display: flex;
+  margin: 5px;
+  border: 30%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.hist-link {
+  color: rgb(218, 149, 124);
+  text-decoration: none;
+}
+
+.hist-link:hover {
+  color: purple;
+}
+
+.info {
+  color: #77b0c0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+  50% {
+    transform: scale(1) rotate(-360deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.nav-link {
+  display: flex;
+  position: relative;
+  color: #fff5ee;
+  margin-left: 100px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.nav-link,
+.nav-link:after {
+  transition: all 0.5s;
+}
+
+.nav-link:after {
+  content: " ";
+  width: 0%;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(9, 191, 236);
+  height: 1.2px;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.info-link {
+  text-decoration: none;
+  color: inherit;
+}
+.li-info {
+  list-style-type: none;
+}
+.twitter-section {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+}
+#twt-form {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#img-carroussel {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.carroussel-section {
+  border: solid;
+  border-color: #7d661a;
+  margin-top: 5px;
+  white-space: nowrap;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#github {
+  font-size: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#linkedin {
+  font-size: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.hover-fx {
+  font-size: 2rem;
+
+  cursor: pointer;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 44px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 300ms;
 }
 
-.App-link {
-  color: #61dafb;
+.hover-fx:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
+  box-shadow: 0 0 0 3px #fff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 300ms;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hover-fx:hover {
+  background-color: #fff;
+  color: #61ae9c;
+}
+
+.hover-fx:hover:after {
+  opacity: 1;
+  transform: scale(1.15);
 }
