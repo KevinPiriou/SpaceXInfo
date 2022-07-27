@@ -7,7 +7,7 @@ import SpaceX3 from "../media/SpaceX3.jpg";
 const Home = () => {
   eagerLoadTwitterLibrary();
   return (
-    <div>
+    <div className="d-flex flex-column">
       <Carousel className="carroussel-section" id="carrou">
         <Carousel.Item>
           <img
@@ -72,7 +72,7 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <div className="twitter-section">
-        <div id="twt-form" className="m-5">
+        <div id="twt-form" className="m-1">
           <Timeline
             dataSource={{
               sourceType: "profile",
@@ -84,8 +84,8 @@ const Home = () => {
             }}
           />
         </div>
-        <div className="vr m-5" variant="warning" bg="warning"></div>
-        <div id="twt-form" className="m-5">
+
+        <div id="twt-form" className="m-1">
           <Timeline
             dataSource={{
               sourceType: "profile",

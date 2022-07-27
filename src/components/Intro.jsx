@@ -1,25 +1,24 @@
-import { Button } from "bootstrap";
-import Video from "../../src/media/StarshipAnimation.mp4";
+import srcVideo from "../../src/media/StarshipAnimation.mp4";
+
 const Intro = () => {
   return (
-    <div id="intro">
+    <div id="intro" className="mt-4">
       <video
+        className="responsive-iframe"
         autoPlay
         loop
         muted
+        src={srcVideo}
         style={{
           position: "absolute",
-          width: "100%",
+          width: "80%",
+          height: "80%",
           left: "50%",
           top: "50%",
-          height: "100%",
-          objectFit: "cover",
           transform: "translate(-50%,-50%)",
           zIndex: "-1",
         }}
-      >
-        <source src={Video} type="video/mp4" />
-      </video>
+      ></video>
     </div>
   );
 };

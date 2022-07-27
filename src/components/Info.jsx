@@ -1,15 +1,23 @@
-import { ListGroup } from "react-bootstrap";
+import { Container, ListGroup, ListGroupItem } from "react-bootstrap";
 import React from "react";
 
 const Info = ({ info }) => {
   return (
-    <div>
+    <Container fluid className="d-flex justify-content-center mt-5">
       <ListGroup>
-        <li className="li-info">NOM : {info.name}</li>
-        <li className="li-info">ADRESSE :{info.headquarters.address}</li>
-        <li className="li-info">VILLE : {info.headquarters.city}</li>
-        <li className="li-info">REGION : {info.headquarters.state}</li>
-        <li className="li-info">
+        <ListGroupItem variant="dark" className="li-info">
+          NOM : {info.name}
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
+          ADRESSE : {info.headquarters.address}
+        </ListGroupItem>
+        <ListGroupItem variant="dark" className="li-info">
+          VILLE : {info.headquarters.city}
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
+          REGION : {info.headquarters.state}
+        </ListGroupItem>
+        <ListGroupItem variant="dark" className="li-info">
           SITE INTERNET :
           <a
             href={info.links.website}
@@ -19,8 +27,8 @@ const Info = ({ info }) => {
             {" "}
             {info.links.website}
           </a>
-        </li>
-        <li className="li-info">
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
           {" "}
           FLICKR :
           <a
@@ -31,8 +39,8 @@ const Info = ({ info }) => {
             {" "}
             {info.links.flickr}
           </a>
-        </li>
-        <li className="li-info">
+        </ListGroupItem>
+        <ListGroupItem variant="dark" className="li-info">
           {" "}
           TWITTER :
           <a
@@ -43,8 +51,8 @@ const Info = ({ info }) => {
             {" "}
             {info.links.twitter}
           </a>
-        </li>
-        <li className="li-info">
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
           TWITTER ELON MUSK :
           <a
             href={info.links.elon_twitter}
@@ -54,15 +62,25 @@ const Info = ({ info }) => {
             {" "}
             {info.links.elon_twitter}
           </a>
-        </li>
-        <li className="li-info">DATE DE CREATION : {info.founded}</li>
-        <li className="li-info">NOMBRE EMPLOYER : {info.employees}</li>
+        </ListGroupItem>
+        <ListGroupItem variant="dark" className="li-info">
+          DATE DE CREATION : {info.founded}
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
+          NOMBRE EMPLOYE : {info.employees}
+        </ListGroupItem>
 
-        <li className="li-info">SITE DE LANCEMENT : {info.launch_sites}</li>
-        <li className="li-info">SITE DE TEST : {info.test_sites}</li>
-        <li className="li-info">FONCTION : {info.summary}</li>
+        <ListGroupItem variant="dark" className="li-info">
+          SITE DE LANCEMENT : {info.launch_sites}
+        </ListGroupItem>
+        <ListGroupItem className="li-info">
+          SITE DE TEST : {info.test_sites}
+        </ListGroupItem>
+        <ListGroupItem variant="dark" className="li-info">
+          FONCTION : {info.summary}
+        </ListGroupItem>
       </ListGroup>
-    </div>
+    </Container>
   );
 };
 

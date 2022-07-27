@@ -38,11 +38,13 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Header />
+
         <Routes>
           <Route path="/" element={<Intro />}></Route>
+
           <Route path="/Accueil" element={<Home />}></Route>
           <Route path="/Informations" element={<Info info={info} />}></Route>
           <Route
@@ -54,9 +56,10 @@ function App() {
             element={<History history={history} />}
           ></Route>
         </Routes>
+
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
